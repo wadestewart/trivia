@@ -1,9 +1,9 @@
 const express   = require('express')
-const hbs       = require('hand')
+const hbs       = require('express-handlebars')
 
-const app = express()
+const app       = express()
 
-const PORT = 4001
+const PORT      = 4001
 
 app.set('port', process.env.PORT || PORT)
 app.set('view engine', 'hbs')
@@ -14,5 +14,8 @@ app.engine('.hbs', hbs({
     layoutsDir:     'views/',
     defaultLayout:  'layout'
 }))
+
+let routes = require('./config/routes')
+app.use(routes)
 
 app.listen(PORT, () => console.log(`Live on port ${PORT}`))

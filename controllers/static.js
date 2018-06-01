@@ -1,0 +1,2 @@
+//Get static homepage
+
