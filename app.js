@@ -1,10 +1,10 @@
 const express   = require('express')
 const hbs       = require('express-handlebars')
 const mongoose  = require('mongoose')
+const routes    = require('./config/routes')
 
 const app       = express()
 
-app.use(express.static(__dirname + '/public'))
 
 const PORT      = 4001
 
@@ -18,11 +18,8 @@ app.engine('.hbs', hbs({
     defaultLayout:  'layout'
 }))
 
-let routes = require('./config/routes')
 app.use(routes)
+app.use('/assets', express.static('/public'))
 
 app.listen(PORT, () => console.log(`Live on port ${PORT}`))
 
-app.get('/', (req, res) => {
-    res.render('welcome')
-})
