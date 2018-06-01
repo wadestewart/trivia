@@ -1,6 +1,8 @@
 const express   = require('express')
-const router    = express.router
+const router    = express.Router()
 
-const staticsController = require
+const staticsController = require('../controllers/static')
 
 router.route('/', staticsController.home)
+
+module.exports = router
