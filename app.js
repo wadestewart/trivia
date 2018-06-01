@@ -1,5 +1,5 @@
 const express   = require('express')
-const hbs       = require('handle')
+const hbs       = require('hand')
 
 const app = express()
 
