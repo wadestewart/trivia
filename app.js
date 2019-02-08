@@ -1,6 +1,6 @@
 const express   = require('express')
 const hbs       = require('express-handlebars')
-const mongoose  = require('mongoose')
+// const mongoose  = require('mongoose')
 const routes    = require('./config/routes')
 
 const app       = express()
